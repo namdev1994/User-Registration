@@ -64,6 +64,21 @@ public class UserRegistration {
             System.out.println(" invalid phone Number ");
         }
     }
+    public static void isValidPassword()
+    {
+        String password=sc.nextLine();                    //Accept input
+        String passwordPattern= "^(?=.*[a-z]).{8,}$";    //set Pattern
+        Pattern pattern= Pattern.compile(passwordPattern);
+        Matcher matcher =pattern.matcher(password);
+        if(matcher.matches())                           //Check Input And Pattern
+        {
+            System.out.println("valid password:");
+        }
+        else
+        {
+            System.out.println(" invalid password");
+        }
+    }
     public static void main(String args[])
     {
         System.out.println("Welcome in User Registraion Program");
@@ -71,5 +86,6 @@ public class UserRegistration {
         isValidLastName();        //method call for lastname
         isValidEmailId();        //method call for email
         isValidPhoneNumber();   //method call for phone number
+        isValidPassword();     //method call for password
     }
 }
