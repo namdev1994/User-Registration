@@ -36,10 +36,26 @@ public class UserRegistration {
             System.out.println(" invalid Last Name ");
         }
     }
+    public static void isValidEmailId()
+    {
+        String email=sc.nextLine();         //Accept Email id
+        String emailPattern="^[a-zA-Z0-9]+[.(a-zA-Z0-9)]*[@]{1}[a-z]+[.]{1}[a-z]{2,4}[.]*[a-z]*{2}$";//set pattern for email id
+        Pattern pattern= Pattern.compile(emailPattern);
+        Matcher matcher =pattern.matcher(email);
+        if(matcher.matches())                        //check Input and Pattern
+        {
+            System.out.println("Enter Phone Number :");
+        }
+        else
+        {
+            System.out.println(" invalid Email Id ");
+        }
+    }
     public static void main(String args[])
     {
         System.out.println("Welcome in User Registraion Program");
         isValidFirstName(); //method call for firstName
         isValidLastName(); //method call for lastname
+        isValidEmailId(); //method call for email
     }
 }
