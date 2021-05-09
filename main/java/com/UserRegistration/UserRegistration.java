@@ -51,11 +51,25 @@ public class UserRegistration {
             System.out.println(" invalid Email Id ");
         }
     }
+    public static void isValidPhoneNumber()
+    {
+        String phoneNumber = sc.nextLine();                      //Accept Number fromuser
+        String phoneNumberPattern = "^[0-9]{2}[ ]+[0-9]{10}";    //set pattern
+        Pattern pattern = Pattern.compile(phoneNumberPattern);
+        Matcher matcher = pattern.matcher(phoneNumber);
+        if (matcher.matches())                                 //Check input and Pattern
+        {
+            System.out.println("Enter password :");
+        } else {
+            System.out.println(" invalid phone Number ");
+        }
+    }
     public static void main(String args[])
     {
         System.out.println("Welcome in User Registraion Program");
-        isValidFirstName(); //method call for firstName
-        isValidLastName(); //method call for lastname
-        isValidEmailId(); //method call for email
+        isValidFirstName();        //method call for firstName
+        isValidLastName();        //method call for lastname
+        isValidEmailId();        //method call for email
+        isValidPhoneNumber();   //method call for phone number
     }
 }
