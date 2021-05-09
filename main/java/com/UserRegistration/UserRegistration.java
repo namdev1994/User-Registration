@@ -20,11 +20,26 @@ public class UserRegistration {
         {
             System.out.println(" invalid First Name ");
         }
-
+    }
+    public static void isValidLastName()
+    {
+        String lastName=sc.nextLine();                          //Accept LastNem From User
+        String lastNamePattern="^([A-Z]{1})+[a-zA-Z]{2,}$";    //Set Pattern
+        Pattern pattern= Pattern.compile(lastNamePattern);
+        Matcher matcher =pattern.matcher(lastName);
+        if(matcher.matches())                                 //pattern Matches check
+        {
+            System.out.println("Enter email Id :");
+        }
+        else
+        {
+            System.out.println(" invalid Last Name ");
+        }
     }
     public static void main(String args[])
     {
         System.out.println("Welcome in User Registraion Program");
-        isValidFirstName(); //method call
+        isValidFirstName(); //method call for firstName
+        isValidLastName(); //method call for lastname
     }
 }
