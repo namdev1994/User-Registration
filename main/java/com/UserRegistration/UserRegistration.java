@@ -12,12 +12,14 @@ public class UserRegistration {
         Matcher matcher =pattern.matcher(firstName);
         if(matcher.matches())                                //matches input With Pattern
         {
+            System.out.println("Valid firstname");
             return true;
         }
         else
         {
-            System.out.println(" invalid First Name ");
+            System.out.println("Enter valid FirstName");
             return false;
+
         }
     }
     public static boolean isValidLastName(String lastName)
@@ -27,11 +29,12 @@ public class UserRegistration {
         Matcher matcher =pattern.matcher(lastName);
         if(matcher.matches())                                 //pattern Matches check
         {
+            System.out.println("Vlaid lastname");
             return true;
         }
         else
         {
-            System.out.println(" invalid Last Name ");
+            System.out.println("Enter valid LastName");
             return false;
         }
     }
@@ -42,11 +45,12 @@ public class UserRegistration {
         Matcher matcher =pattern.matcher(email);
         if(matcher.matches())                        //check Input and Pattern
         {
+            System.out.println("valid Email");
             return true;
         }
         else
         {
-            System.out.println(" invalid Email Id ");
+            System.out.println("Enter Valid Email");
             return false;
         }
     }
@@ -57,9 +61,10 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(phoneNumber);
         if (matcher.matches())                                 //Check input and Pattern
         {
+            System.out.println("valid Phone number");
             return true;
         } else {
-            System.out.println(" invalid phone Number ");
+            System.out.println("Enter valid phone Number");
             return false;
         }
     }
@@ -70,21 +75,31 @@ public class UserRegistration {
         Matcher matcher =pattern.matcher(password);
         if(matcher.matches())                           //Check Input And Pattern
         {
+            System.out.println("valid password");
             return true;
         }
         else
         {
-            System.out.println(" invalid password");
+            System.out.println("Enetr valid password");
             return false;
         }
     }
-    public static void main(String args[])
-    {
+    public static void main(String args[])  {
         System.out.println("Welcome in User Registraion Program");
-        isValidFirstName(sc.nextLine());        //method call for firstName
-        isValidLastName(sc.nextLine());        //method call for lastname
-        isValidEmailId(sc.nextLine());        //method call for email
-        isValidPhoneNumber(sc.nextLine());   //method call for phone number
-        isValidPassword(sc.nextLine());     //method call for password
+        System.out.println("Enter firstName");
+        String firstName= sc.next();
+        isValidFirstName(firstName);        //method call for firstName
+        System.out.println("Enter laststName");
+        String lastName=sc.next();
+        isValidLastName(lastName);        //method call for lastname
+        System.out.println("Enter Email");
+        String email=sc.next();
+        isValidEmailId(email);        //method call for email
+        System.out.println("Enter Phone Number");
+        String phoneNumber=sc.next();
+        isValidPhoneNumber(phoneNumber);   //method call for phone number
+        System.out.println("Enter password");
+        String password=sc.next();
+        isValidPassword(password);     //method call for password
     }
 }
