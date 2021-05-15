@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class UserRegistration {
     static Scanner sc=new Scanner(System.in);
-    public static boolean isValidFirstName(String firstName)
+    public static boolean isValidFirstName(String firstName) throws UserRegistrationException
     {
         String firstNamePattern="^([A-Z]{1})+[a-zA-Z]{2,}$"; //set Pattern
         Pattern pattern= Pattern.compile(firstNamePattern);
@@ -18,11 +18,11 @@ public class UserRegistration {
         else
         {
             System.out.println("Enter valid FirstName");
-            return false;
+           throw new UserRegistrationException("Enetr the valid Name");
 
         }
     }
-    public static boolean isValidLastName(String lastName)
+    public static boolean isValidLastName(String lastName) throws UserRegistrationException
     {
         String lastNamePattern="^([A-Z]{1})+[a-zA-Z]{2,}$";    //Set Pattern
         Pattern pattern= Pattern.compile(lastNamePattern);
@@ -35,10 +35,10 @@ public class UserRegistration {
         else
         {
             System.out.println("Enter valid LastName");
-            return false;
+            throw new UserRegistrationException("Enetr the valid Name");
         }
     }
-    public static boolean isValidEmailId(String email)
+    public static boolean isValidEmailId(String email)throws UserRegistrationException
     {
         String emailPattern="^[a-zA-Z0-9]+[.(a-zA-Z0-9)]*[@]{1}[a-z]+[.]{1}[a-z]{2,4}[.]*[a-z]*{2}$";//set pattern for email id
         Pattern pattern= Pattern.compile(emailPattern);
@@ -51,10 +51,10 @@ public class UserRegistration {
         else
         {
             System.out.println("Enter Valid Email");
-            return false;
+            throw new UserRegistrationException("Enetr the valid Email");
         }
     }
-    public static boolean isValidPhoneNumber(String phoneNumber)
+    public static boolean isValidPhoneNumber(String phoneNumber)throws UserRegistrationException
     {
         String phoneNumberPattern = "^[0-9]{2}[ ]+[0-9]{10}";    //set pattern
         Pattern pattern = Pattern.compile(phoneNumberPattern);
@@ -65,10 +65,10 @@ public class UserRegistration {
             return true;
         } else {
             System.out.println("Enter valid phone Number");
-            return false;
+            throw new UserRegistrationException("Enetr the valid PhoneNumber");
         }
     }
-    public static boolean isValidPassword(String password)
+    public static boolean isValidPassword(String password)throws UserRegistrationException
     {
         String passwordPattern= "^(?=.*[0-9])(?=.*[@#$%^&!])(?=.*[A-Z])(?=.*[a-z]).{8,}$";    //set Pattern
         Pattern pattern= Pattern.compile(passwordPattern);
@@ -81,10 +81,10 @@ public class UserRegistration {
         else
         {
             System.out.println("Enetr valid password");
-            return false;
+            throw new UserRegistrationException("Enetr the valid Passwprd");
         }
     }
-    public static void main(String args[])  {
+    public static void main(String args[]) throws UserRegistrationException {
         System.out.println("Welcome in User Registraion Program");
         System.out.println("Enter firstName");
         String firstName= sc.next();

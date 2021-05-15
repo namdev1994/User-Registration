@@ -37,7 +37,7 @@ public class ParameterizedTesting {
                 { "xyz+100@gmail.com" , true }});
     }
     @Test
-    public void checkEmailValidOrNot() {
+    public void checkEmailValidOrNot()throws UserRegistrationException {
         System.out.println("This is Expected Result"+ this.expectedResult);
         Assertions.assertEquals(this.expectedResult, userRegistration.isValidEmailId(this.email));
     }
